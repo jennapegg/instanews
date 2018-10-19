@@ -1,3 +1,29 @@
+@import "partials/normalize";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/base";
+@import "partials/layout";
+
+li {
+  //mobile first
+  flex: 0 1 100%;
+  @include tablet {
+    flex: 0 1 50%;
+  }
+  @include desktop {
+    flex: 0 1 25%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 @font-face {
   font-family: "Open-Sans-Bold-Italic";
   src: url("fonts/OpenSans-BoldItalic.eot");
