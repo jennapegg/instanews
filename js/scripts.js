@@ -19,14 +19,18 @@ $(document).ready(function() {
     })
       .done(function(data) {
         $('.results').empty();
-        $.each(data.results, function(key, value) {
+        let filteredData = data.results.filter(function(info) {
+          return info.multimedia.length;
+        });
+        filteredData = filteredData.slice(0, 12);
+
+        $.each(filteredData, function(key, value) {
           $('.results').append(
-            '<p>' +
-              value.abstract +
-              '<img src=' +
-              value.multimedia[2].url +
-              '>' +
-              '</p>'
+            `<article style="background: url(${
+              value.multimedia[4].url
+            }) no-repeat center; background-size: cover;"><p>${
+              value.abstract
+            }</p></article>`
           );
         });
       })
