@@ -19,6 +19,7 @@ $(document).ready(function() {
     })
       .done(function(data) {
         $('.results').empty();
+        $('div.selector').addClass('selected');
         let filteredData = data.results.filter(function(info) {
           return info.multimedia.length;
         });

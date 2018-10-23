@@ -39,10 +39,10 @@ header {
       font-weight: bold;
       font-size: 16px;
     }
-  } // end of select
-} //end of header
+  }
+}
 
-div {
+.results {
   article {
     position: relative;
     z-index: -100;
@@ -53,7 +53,7 @@ div {
     position: absolute;
     z-index: 100;
     bottom: 0;
-    height: 20%;
+    min-height: 20%;
     background: rgba(0, 0, 0, 0.6);
     text-align: left;
     padding: 0 6px;
@@ -62,11 +62,14 @@ div {
 }
 
 footer {
-  color: #c2c2c2;
   display: flex;
   justify-content: center;
   height: 10rem;
   align-items: flex-end;
   font-size: 14.5px;
   padding-bottom: 17px;
+}
+
+.selected {
+  color: red;
 }
