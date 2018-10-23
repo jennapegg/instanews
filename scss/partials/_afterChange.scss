@@ -1,5 +1,4 @@
 .selected {
-  //   font-size: 14px;
   select {
     margin-bottom: 12%;
   }
@@ -9,19 +8,19 @@
       min-height: 125px;
       padding: 0;
       margin: 0;
-      margin-left: 17%;
+      margin-left: 100px;
     }
     @include desktop {
     } //end of media queries
   }
 
   .logo {
-    width: 40%;
+    width: 147px;
     padding-top: 8%;
     @include tablet {
-      width: 13%;
+      width: 70px;
       padding: 0;
-      margin-right: 17%;
+      margin-right: 84px;
     }
     @include desktop {
     } //end of media queries
