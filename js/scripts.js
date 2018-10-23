@@ -2,8 +2,8 @@ $(document).ready(function() {
   //START OF DOC READY
 
   $('#sections').on('change', function() {
+    $('.loading').append('<img src="images/ajax-loader.gif">');
     const selected = $(this).val();
-
     // MY FUNCTION
     let url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';
     url +=
@@ -24,14 +24,15 @@ $(document).ready(function() {
           return info.multimedia.length;
         });
         filteredData = filteredData.slice(0, 12);
-
         $.each(filteredData, function(key, value) {
           $('.results').append(
-            `<article style="background: url(${
+            `<a href="${
+              value.url
+            }" target="_blank"><article style="background: url(${
               value.multimedia[4].url
             }) no-repeat center; background-size: cover;"><p>${
               value.abstract
-            }</p></article>`
+            }</p></article></a>`
           );
         });
       })
@@ -40,8 +41,10 @@ $(document).ready(function() {
         $('.results').append(
           `<p class="fail">Sorry, we can't display the content right now.</p>`
         );
+      })
+      .always(function() {
+        $('.loading').hide();
       });
-
     //End of my function
   }); //End of #sections function
 }); //END OF DOC READY
