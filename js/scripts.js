@@ -2,7 +2,9 @@ $(document).ready(function() {
   //START OF DOC READY
 
   $('#sections').on('change', function() {
-    $('.loading').append('<img src="images/ajax-loader.gif">');
+    $('.loading').append(
+      '<img src="images/ajax-loader.gif" class="loading-image">'
+    );
     const selected = $(this).val();
     // MY FUNCTION
     let url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';
@@ -20,10 +22,13 @@ $(document).ready(function() {
       .done(function(data) {
         $('.results').empty();
         $('div.selector').addClass('selected');
-        let filteredData = data.results.filter(function(info) {
-          return info.multimedia.length;
-        });
-        filteredData = filteredData.slice(0, 12);
+
+        let filteredData = data.results
+          .filter(function(info) {
+            return info.multimedia.length > 4;
+          })
+          .slice(0, 12);
+
         $.each(filteredData, function(key, value) {
           $('.results').append(
             `<a href="${
@@ -43,7 +48,7 @@ $(document).ready(function() {
         );
       })
       .always(function() {
-        $('.loading').hide();
+        $('.loading-image').remove();
       });
     //End of my function
   }); //End of #sections function

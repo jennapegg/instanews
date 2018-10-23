@@ -11,6 +11,10 @@ header {
     font-size: 14px;
   }
   @include desktop {
+    font-size: 16px;
+    padding-top: 165px;
+    padding-left: 30px;
+    margin: 0;
   } //end of media queries
   .logo {
     padding-top: 115px;
@@ -18,10 +22,14 @@ header {
     width: 215px;
     @include tablet {
       width: 28%;
+      max-width: 170px;
       padding: 0;
       margin-right: 15px;
     }
     @include desktop {
+      width: 225px;
+      max-width: 300px;
+      margin-right: 100px;
     } //end of media queries
   }
   select {
@@ -31,7 +39,6 @@ header {
     font-weight: bold;
     font-size: 16px;
     padding: 0;
-    // border: none;
     &:focus {
       outline: 0;
     }
@@ -43,6 +50,18 @@ header {
       font-weight: bold;
       font-size: 16px;
     }
+  }
+}
+
+.loading {
+  position: absolute;
+  z-index: 101;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  img {
+    width: 40px;
   }
 }
 
@@ -58,5 +77,8 @@ footer {
     height: 225px;
   }
   @include desktop {
+    height: 190px;
+    justify-content: flex-start;
+    padding-left: 30px;
   } //end of media queries
 }
