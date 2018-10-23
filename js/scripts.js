@@ -36,7 +36,9 @@ $(document).ready(function() {
       })
       .fail(function() {
         $('.results').empty();
-        $('.results').append("Sorry, we can't disply the content right now.");
+        $('.results').append(
+          `<p class="fail">Sorry, we can't display the content right now.</p>`
+        );
       });
 
     //End of my function
