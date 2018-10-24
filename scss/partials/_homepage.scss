@@ -27,8 +27,7 @@ header {
       margin-right: 15px;
     }
     @include desktop {
-      width: 225px;
-      max-width: 300px;
+      max-width: 225px;
       margin-right: 100px;
     } //end of media queries
   }
@@ -42,18 +41,12 @@ header {
     &:focus {
       outline: 0;
     }
-    @include tablet {
-    }
-    @include desktop {
-    } //end of media queries
     option {
       font-weight: bold;
       font-size: 16px;
     }
   }
 }
-
-//ADD VH/VW TO FOOTER!!! SOLVES PROBLEM OF THE THINGY!!
 
 .loading {
   position: absolute;

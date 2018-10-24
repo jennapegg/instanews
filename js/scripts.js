@@ -6,7 +6,6 @@ $(document).ready(function() {
       '<img src="images/ajax-loader.gif" class="loading-image">'
     );
     const selected = $(this).val();
-    // MY FUNCTION
     let url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';
     url +=
       '?' +
@@ -43,13 +42,14 @@ $(document).ready(function() {
       })
       .fail(function() {
         $('.results').empty();
-        $('.results').append(
-          `<p class="fail">Sorry, we can't display the content right now.</p>`
-        );
+        $('.selector')
+          .addClass('selected')
+          .append(
+            `<p class="fail">Sorry! There was a problem, please try again.</p>`
+          );
       })
       .always(function() {
         $('.loading-image').remove();
       });
-    //End of my function
-  }); //End of #sections function
+  }); //End of change function
 }); //END OF DOC READY
