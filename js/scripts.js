@@ -6,7 +6,7 @@ $(document).ready(function() {
       '<img src="images/ajax-loader.gif" class="loading-image">'
     );
     const selected = $(this).val();
-    let url = 'https://api.nytimes.com/svc/topstories/v2/' + selected + '.json';
+    let url = 'https://api.ntimes.com/svc/topstories/v2/' + selected + '.json';
     url +=
       '?' +
       $.param({

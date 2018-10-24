@@ -77,10 +77,15 @@
   .fail {
     font-family: 'Open-Sans-Light-Italic';
     text-align: center;
-  }
-
-  footer {
-    height: 100px;
-    align-items: center;
+    padding-top: 150px;
+    font-size: 12.5px;
+    @include tablet {
+      padding-top: 325px;
+      font-size: 14px;
+    }
+    @include desktop {
+      padding-top: 315px;
+      font-size: 16px;
+    }
   }
 }
