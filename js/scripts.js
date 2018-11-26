@@ -1,6 +1,9 @@
 $(document).ready(function() {
   //START OF DOC READY
 
+  const $results = $('.results');
+  const selectedClass = 'selected';
+
   $('#sections').on('change', function(event) {
     event.preventDefault();
     $('.loading').append(
@@ -11,7 +14,7 @@ $(document).ready(function() {
   }); //end of on change function
 
   function getStories(selected) {
-    let url = `https://api.nytimes.com/svc/topstories/v2/${selected}.json`;
+    let site = `https://api.nytimes.com/svc/topstories/v2/${selected}.json`;
     url +=
       '?' +
       $.param({
@@ -19,7 +22,7 @@ $(document).ready(function() {
       });
 
     $.ajax({
-      url: url,
+      url: site,
       method: 'GET',
       dataType: 'JSON'
     })
@@ -35,8 +38,8 @@ $(document).ready(function() {
   } // end of getStories/ajax function
 
   function appendStories(data) {
-    $('.results').empty();
-    $('div.selector').addClass('selected');
+    $results.empty();
+    $('div.selector').addClass(selectedClass);
 
     let filteredData = data.results
       .filter(info => {
@@ -45,7 +48,7 @@ $(document).ready(function() {
       .slice(0, 12);
 
     for (let value of filteredData) {
-      $('.results').append(
+      $results.append(
         `<a href="${
           value.url
         }" target="_blank"><article style="background: url(${
@@ -58,9 +61,9 @@ $(document).ready(function() {
   } //end of append stories function
 
   function failure() {
-    $('.results').empty();
+    $results.empty();
     $('.selector')
-      .addClass('selected')
+      .addClass(selectedClass)
       .append(
         `<p class="fail">Sorry! There was a problem, please try again.</p>`
       );
