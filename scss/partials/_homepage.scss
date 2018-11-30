@@ -4,13 +4,11 @@ header {
   align-items: center;
   font-size: 12.5px;
   margin: 0;
-  margin-bottom: 55px;
 
   @include tablet {
     flex-direction: row;
     margin-left: 18%;
     margin-top: 183px;
-    margin-bottom: 125;
     font-size: 14px;
   }
   @include desktop {
@@ -18,7 +16,6 @@ header {
     padding-top: 165px;
     padding-left: 30px;
     margin: 0;
-    margin-bottom: 90px;
   } //end of media queries
   .logo {
     padding-top: 115px;
@@ -70,11 +67,11 @@ footer {
   align-items: flex-end;
   font-size: 14.5px;
   color: #c2c2c2;
-  padding-bottom: 17px;
-  height: 100px;
+  height: 90px;
 
   @include desktop {
     justify-content: flex-start;
+    align-items: center;
     padding-left: 30px;
   } //end of media queries
 }

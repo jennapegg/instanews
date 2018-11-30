@@ -1,5 +1,5 @@
 {
-  "name": "InstaNews",
+  "name": "instanews",
   "version": "1.0.0",
   "description": "A New York Times API, including a package for running gulp to transpile es6 and compile scss. CSS lint is included as well as some basic es-linting.",
   "main": "gulpfile.js",

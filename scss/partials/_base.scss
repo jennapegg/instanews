@@ -7,6 +7,17 @@ body {
   font-family: 'Open-Sans-Light';
 }
 
+body, 
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.selector {
+  flex: 1;
+}
+
 a {
   text-decoration: none;
   color: #ffffff;
