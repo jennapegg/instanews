@@ -14,12 +14,7 @@ $(document).ready(function() {
   }); //end of on change function
 
   function getStories(selected) {
-    let site = `https://api.nytimes.com/svc/topstories/v2/${selected}.json`;
-    url +=
-      '?' +
-      $.param({
-        'api-key': '42ab6a5236364b609385636b553df245'
-      });
+    let site = `https://api.nytimes.com/svc/topstories/v2/${selected}.json?api-key=z02USe7Tr09FugQM1vWLpKXwV32eiImi`;
 
     $.ajax({
       url: site,
