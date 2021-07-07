@@ -1,10 +1,10 @@
 // default styles you want to change overall
 // Ex:
 body {
-  color: #ffffff;
+  color: $font-color-std;
   background: #000000;
-  font-size: 16px;
-  font-family: 'Open-Sans-Light';
+  font-size: $font-size-std;
+  font-family: $font-fam-std;
 }
 
 body, 
@@ -20,5 +20,5 @@ html {
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: $font-color-std;
 }
